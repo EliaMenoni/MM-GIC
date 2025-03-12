@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-_j_s*y@jnyfxrq^_!+v-s&(n4_4he05-w%#gwpkt7tz7txwx2!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["https://8000-eliamenoni-mmgic-40w9vb5n52l.ws-eu118.gitpod.io"]
 
 # Application definition
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Anagrafica',
 ]
 
 MIDDLEWARE = [
