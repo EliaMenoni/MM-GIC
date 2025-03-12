@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Amministrazione(models.Model):
 
@@ -15,6 +16,9 @@ class Amministrazione(models.Model):
 
     def get_absolute_url(self):
         return reverse("Amministrazione_detail", kwargs={"pk": self.pk})
+    
+    def get_admin_url(self):
+        return reverse('admin:Anagrafica_amministrazione_change', args=[self.pk])
 
 class Sezione(models.Model):
 
@@ -32,6 +36,9 @@ class Sezione(models.Model):
 
     def get_absolute_url(self):
         return reverse("Sezione_detail", kwargs={"pk": self.pk})
+    
+    def get_admin_url(self):
+        return reverse('admin:Anagrafica_sezione_change', args=[self.pk])
 
 class Ufficio(models.Model):
 
@@ -49,3 +56,6 @@ class Ufficio(models.Model):
 
     def get_absolute_url(self):
         return reverse("Ufficio_detail", kwargs={"pk": self.pk})
+
+    def get_admin_url(self):
+        return reverse('admin:Anagrafica_ufficio_change', args=[self.pk])
